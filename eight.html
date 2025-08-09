@@ -4,6 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Final Dig</title>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Hide all parts initially
+        ['part-goodendings', 'part-bad/wildendings', 'part-mischiefendings'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) el.style.display = 'none';
+        });
+        // Intercept choice clicks
+        var choices = document.querySelectorAll('goodendings[href^="#part-"]');
+        choices.forEach(function(choice) {
+            choice.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Hide intro div
+                choice.closest('div').style.display = 'none';
+                // Show selected part
+                var partId = choice.getAttribute('href').replace('#','');
+                var partDiv = document.getElementById(partId);
+                if (partDiv) partDiv.style.display = 'block';
+                // Scroll to revealed part
+                if (partDiv) partDiv.scrollIntoView({behavior:'smooth'});
+            });
+        });
+    });
+    </script>
 </head>
 <body>
     <div><h1>CHAPTER 8</h1></div>

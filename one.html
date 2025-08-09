@@ -3,13 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to the Bhoot Bungalow</title>
+    <title>Chapter 1 - Bhoot Bungalow</title>         
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: #1a1a1a;
+            color: #e0e0e0;
+            font-family: "Georgia", serif;
+            line-height: 1.8;
+            min-height: 100vh;
+            padding: 20px;
+            /* background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), */
+            /* url('https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8aGF1bnRlZCxob3VzZXx8fHx8fDE2OTE2NDQ4MzA&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080'); */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+
+    <script>
+        function showNext(currentPart, nextPart) {
+            document.getElementById(currentPart).style.display = 'none';
+            document.getElementById(nextPart).style.display = 'block';
+            // Smooth scroll to the next part
+            document.getElementById(nextPart).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 </head>
 <body>
-    <div> <h1> CHAPTER 1</h1></div>
+    <div class="container">
+        <div class="always">
+            <h1>CHAPTER 1</h1>
+        </div>
 
-    <div id="part-one">
-        <p>
+        <div id="part-one" class="story-part">
+            <p>
             Summer was supposed to be epic.<br>
             Science camp. Zip lines. Frog dissections. Campfire chemistry tricks. And most importantly—a glorious, screen-free experience that your parents promised would help you “reconnect with reality.”<br>
             Instead, reality punched you in the face.<br>
@@ -26,11 +54,11 @@
             The house looms.<br>
             It’s tall, sagging, and entirely too enthusiastic about being spooky. Moss clings to its corners like guilt. Shutters rattle with dramatic flair. You half-expect thunder to strike just to complete the aesthetic.<br>
             A chill skates down your spine as you approach the front door. Not fear. Not yet. Just... that feeling you get when you realize your summer vacation is going to suck.<br>
-            <a href="#part-two">NEXT</a>
+            <a href="#" onclick="showNext('part-one', 'part-two')">NEXT</a>
         </p>
     </div>
 
-    <div id="part-two">
+    <div id="part-two" class="story-part">
         <p>
             The front porch is made of old teakwood and fresh despair. Your suitcase thuds against the steps as you climb them. A broken nameplate swings above you:<br>
             “SHANTI NIVAS”<br>
@@ -51,11 +79,11 @@
             From the left: a whispering voice behind a locked door.<br>
             From the right: a rickety trapdoor to the attic swings open, inviting.<br>
             Straight ahead: something crashes. Then giggles. Multiple. None of them belong to you.<br>
-            <a href="#part-three">NEXT</a>
+            <a href="#" onclick="showNext('part-two','part-three')">NEXT</a>
         </p>
     </div>
 
-    <div id="part-three">
+    <div id="part-three" class="story-part">
         <p>
             You take a deep breath.<br>
             You're not a believer. Not exactly. But this house is definitely... active.<br>
@@ -67,11 +95,11 @@
             You slowly look around.<br>
             There’s no one else here.<br>
             Your fingers twitch. Your brain itches. Your summer just got very weird, very fast.<br>
-            <a href="#part-four">NEXT</a>
+            <a href="#" onclick="showNext('part-three','part-four')">NEXT</a>
         </p>
     </div>
 
-    <div id="part-four">
+    <div id="part-four" class="story-part">
         <h2>Choose Your Path — and Your Doom</h2>
         <p>Your journey begins now.<br>
             But remember—paths may cross. What you ignore now may haunt you later.<br>

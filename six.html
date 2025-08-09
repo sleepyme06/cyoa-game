@@ -4,9 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Society Strikes Back</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Hide all parts initially
+        ['part-a', 'part-b', 'part-c'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) el.style.display = 'none';
+        });
+        // Intercept choice clicks
+        var choices = document.querySelectorAll('a[href^="#part-"]');
+        choices.forEach(function(choice) {
+            choice.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Hide intro div
+                choice.closest('div').style.display = 'none';
+                // Show selected part
+                var partId = choice.getAttribute('href').replace('#','');
+                var partDiv = document.getElementById(partId);
+                if (partDiv) partDiv.style.display = 'block';
+                // Scroll to revealed part
+                if (partDiv) partDiv.scrollIntoView({behavior:'smooth'});
+            });
+        });
+    });
+    </script>
 </head>
 <body>
-    <div>
+    <div id="intro" class="story-part">
         <h1>CHAPTER 6</h1>
         <h3>Setting: Bhoot Bungalow, mid-monsoon.</h3>
         <p>

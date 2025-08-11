@@ -12,7 +12,7 @@
             if (el) el.style.display = 'none';
         });
         // Intercept choice clicks
-        var choices = document.querySelectorAll('goodendings[href^="#part-"]');
+        var choices = document.querySelectorAll('a[href^="#part-"]');
         choices.forEach(function(choice) {
             choice.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -102,7 +102,7 @@
         <a href="thanku.html">NEXT</a>
     </div>
 
-    <div id="#part-mischiefendings">
+    <div id="part-mischiefendings">
         <p>
             You look at the scroll. Then the mango tree. Then Bhoot Raja.<br>
             “Here’s the plan,” you say. “We bribe the Society.”<br>
